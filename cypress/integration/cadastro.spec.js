@@ -24,7 +24,8 @@ describe('Cadastro', ()=>{
 
                 
             },
-            metodo_entrega: 'Moto'
+            metodo_entrega: 'Moto',
+            cnh: 'cnh-digital.jpg'
         }
 
        
@@ -43,8 +44,14 @@ describe('Cadastro', ()=>{
         cy.get('input[name="city-uf"]').should('have.value', entregador.endereco.cidade_uf)
 
         cy.contains(' .delivery-method li', entregador.metodo_entrega).click()
+        cy.get('input[accept^="image"]').attachFile(entregador.cnh)
+
+        cy.get('form button[type="submit"]').click()
+
+        const expectedMessage = 'Recebemos os seus dados. Fique de olho na sua caixa de email, pois e em breve retornamos o contato.'
+        cy.get('.swal2-container .swal2-html-container').should('have.text', expectedMessage)
 
 
 
-    })
+    }) 
 })
