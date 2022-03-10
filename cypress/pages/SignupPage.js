@@ -39,7 +39,8 @@ fillForm(deliver) {
     
 
     alertMessageShouldBe(expectedMessage) {
-        cy.get('.alert-error').should('have.text', expectedMessage)
+        //cy.get('.alert-error').should('have.text', expectedMessage)
+        cy.contains('.alert-error', expectedMessage).should('be.visible')
     }
 
     
