@@ -11,7 +11,7 @@ go() {
 fillForm(deliver) {
     cy.get('#page-deliver > form > fieldset:nth-child(2) > div:nth-child(2) > div:nth-child(1) > input[type=text]').type(deliver.name)
     cy.get('#page-deliver > form > fieldset:nth-child(2) > div:nth-child(2) > div:nth-child(2) > input[type=text]').type(deliver.cpf)
-    cy.get('#page-deliver > form > fieldset:nth-child(2) > div:nth-child(3) > div:nth-child(1) > input[type=email]').type(deliver.email)
+    cy.get('#page-deliver > form > fieldset:nth-child(2) > div:nth-child(3) > div:nth-child(1) > input[type=text]').type(deliver.email)
     cy.get('#page-deliver > form > fieldset:nth-child(2) > div:nth-child(3) > div:nth-child(2) > input[type=text]').type(deliver.whats)
     cy.get('input[name="postalcode"]').type(deliver.address.postalcode)
     cy.get('input[type=button][value="Buscar CEP"]').click()
@@ -36,6 +36,13 @@ fillForm(deliver) {
     modalContentShouldBe(expectedMessage) {
         cy.get('.swal2-container .swal2-html-container').should('have.text', expectedMessage)
     }
+    
+
+    alertMessageShouldBe(expectedMessage) {
+        cy.get('.alert-error').should('have.text', expectedMessage)
+    }
+
+    
 
 }
 

@@ -17,6 +17,27 @@
         },
         "delivery_method": "Moto",
         "cnh": "cnh-digital.jpg"
+    },
+
+    "email_error":{
+
+        "name": "Tiago Nascimento",
+        "cpf": "00000000025",
+        "email": "tiago.com.br",
+        "whats": "999999999",
+        "address": {
+            "postalcode": "49082030",
+            "street": "Rua Amador Bueno",
+            "number": "108",
+            "details": "ap 300",
+            "district": "Novo Paraíso",
+            "city_state": "Aracaju/SE"
+
+            
+        },
+        "delivery_method": "Moto",
+        "cnh": "cnh-digital.jpg"
+
     }
     
 }
